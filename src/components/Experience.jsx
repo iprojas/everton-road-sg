@@ -20,7 +20,7 @@ import * as THREE from "three";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import { RippleTexture } from "./RippleTexture";
+// import { RippleTexture } from "./RippleTexture";
 
 // FIXME: useMemo?
 const cameraRotate = new THREE.Vector2();
@@ -89,7 +89,7 @@ export const Experience = () => {
 
   const renderCamera = useRef();
 
-  const rippleTexture = useRef();
+  // const rippleTexture = useRef();
 
   const screenMesh = useRef();
 
@@ -570,10 +570,10 @@ export const Experience = () => {
           toneMapped={false}
         >
           {/* RIPPLE TEXTURE */}
-          <RenderTexture ref={rippleTexture} attach={"uDisplacement"}>
+          {/* <RenderTexture ref={rippleTexture} attach={"uDisplacement"}>
             <OrthographicCamera makeDefault position={[0, 0, 10]} />
             <RippleTexture pointer={pointer} />
-          </RenderTexture>
+          </RenderTexture> */}
         </transitionMaterial>
       </mesh>
 

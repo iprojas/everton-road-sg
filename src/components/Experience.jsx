@@ -94,11 +94,8 @@ export const Experience = () => {
   const screenMesh = useRef();
 
   // LIGHT HELPERS
-  const spotLight1 = useRef();
-  const spotLight2 = useRef();
+ 
   const spotLight3 = useRef();
-  // useHelper(spotLight1, THREE.SpotLightHelper)
-  // useHelper(spotLight2, THREE.SpotLightHelper)
   // useHelper(spotLight3, THREE.SpotLightHelper)
 
   // CONTROLS
@@ -185,7 +182,7 @@ export const Experience = () => {
   });
 
   const { blur } = useControls("Env Blur", {
-    blur: { value: 0.4, min: 0, max: 1 },
+    blur: { value: 0.2, min: 0, max: 1 },
   });
 
   // const transitionControls = useControls("Transition", {
@@ -659,7 +656,7 @@ export const Experience = () => {
         /> */}
 
         {/* ENVIRONMENT */}
-        <Environment preset="city" background blur={blur}></Environment>
+        <Environment preset="forest" background blur={blur}></Environment>
 
         {/* TEXT */}
         <group position-y={20} ref={text}>

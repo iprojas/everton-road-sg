@@ -59,13 +59,13 @@ const cameraPositions = {
 
 const splatProps = [
   {
-    source: "https://lumalabs.ai/capture/87a96011-9ae7-4a2d-bbd0-be3e49c9362f",
+    source: "https://lumalabs.ai/capture/53d41eb7-9217-4b7d-bd47-c86577204641",
   },
   {
     source: "https://lumalabs.ai/capture/419f25df-ec39-45c3-8e87-7eee6dbc24da",
   },
   {
-    source: "https://lumalabs.ai/capture/b8eec778-d960-48d3-8d5f-be5d57173827",
+    source: "https://lumalabs.ai/capture/85b91767-787b-4129-ae79-cfb4065b9fe8",
   },
 ];
 
@@ -138,7 +138,7 @@ export const Experience = () => {
       step: 0.05,
     },
     scale: {
-      value: 5,
+      value: 6,
     },
   });
 
@@ -480,7 +480,7 @@ export const Experience = () => {
     //   0.05
     // );
 
-    cameraRotateBy.set(pointer.x * 0.007, pointer.y * 0.007);
+    cameraRotateBy.set(pointer.x * 0.07, pointer.y * 0.07);
     cameraRotate.lerp(cameraRotateBy, delta * 2);
     cameraControls.current.rotate(
       cameraRotateBy.x - cameraRotate.x,
@@ -597,36 +597,7 @@ export const Experience = () => {
       <group ref={mainGroup}>
         {/* LIGHTING */}
         <ambientLight intensity={Math.PI / 4} />
-        <spotLight
-          ref={spotLight1}
-          position={[0, 40, 26]}
-          angle={0.5}
-          decay={0.7}
-          distance={48}
-          penumbra={1}
-          intensity={1750}
-        />
-        <spotLight
-          ref={spotLight2}
-          color="white"
-          position={[20, -40, 26]}
-          angle={0.5}
-          decay={1}
-          distance={53}
-          penumbra={1}
-          intensity={2000}
-        />
-        <spotLight
-          ref={spotLight3}
-          color="red"
-          position={[15, 0, 20]}
-          angle={0.1}
-          decay={1}
-          distance={35}
-          penumbra={-1}
-          intensity={100}
-        />
-
+        
         {/* TRANSMISSION MESH */}
         {/* <Float> */}
         <RoundedBox
@@ -688,18 +659,18 @@ export const Experience = () => {
         /> */}
 
         {/* ENVIRONMENT */}
-        <Environment preset="dawn" background blur={blur}></Environment>
+        <Environment preset="city" background blur={blur}></Environment>
 
         {/* TEXT */}
         <group position-y={20} ref={text}>
           <Text
             fontSize={5}
-            color={"#5eead4"}
+            color={"#cccccc"}
             anchorY="bottom"
             textAlign="center"
-            font="fonts/Gloock-Regular.ttf"
+            font="fonts/Redaction_70-Bold.ttf"
           >
-            Igna Igna
+            IgnaIgna
             <meshStandardMaterial />
           </Text>
           <Text
@@ -707,7 +678,7 @@ export const Experience = () => {
             color="#c2410c"
             anchorY="top"
             textAlign="center"
-            font="fonts/Agbalumo-Regular.ttf"
+            font="fonts/Redaction_70-Bold.ttf"
             position={[8, 0.5, 0]}
           >
             studio

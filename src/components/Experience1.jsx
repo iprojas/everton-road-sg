@@ -529,7 +529,7 @@ export const Experience = () => {
             textAlign="center"
             font="fonts/Gloock-Regular.ttf"
           >
-            Everton Road
+            Igna Igna
             <meshStandardMaterial color="white" />
           </Text>
           <Text
@@ -538,7 +538,7 @@ export const Experience = () => {
             textAlign="center"
             font="fonts/Agbalumo-Regular.ttf"
           >
-            Singapore
+            studio
             <meshStandardMaterial color="grey" />
           </Text>
         </Billboard>

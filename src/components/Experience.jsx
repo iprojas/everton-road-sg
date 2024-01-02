@@ -699,7 +699,7 @@ export const Experience = () => {
             textAlign="center"
             font="fonts/Gloock-Regular.ttf"
           >
-            Everton Road
+            Igna Igna
             <meshStandardMaterial />
           </Text>
           <Text
@@ -710,7 +710,7 @@ export const Experience = () => {
             font="fonts/Agbalumo-Regular.ttf"
             position={[8, 0.5, 0]}
           >
-            Singapore
+            studio
             <meshStandardMaterial />
           </Text>
         </group>

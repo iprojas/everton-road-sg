@@ -93,10 +93,6 @@ export const Experience = () => {
 
   const screenMesh = useRef();
 
-  // LIGHT HELPERS
- 
-  const spotLight3 = useRef();
-  // useHelper(spotLight3, THREE.SpotLightHelper)
 
   // CONTROLS
   useControls("Camera", {
@@ -178,7 +174,7 @@ export const Experience = () => {
   });
 
   const envControls = useControls("Environment", {
-    envMapIntensity: { value: 0.25, min: 0, max: 12 },
+    envMapIntensity: { value: 0.2, min: 0, max: 12 },
   });
 
   const { blur } = useControls("Env Blur", {
@@ -330,24 +326,6 @@ export const Experience = () => {
         },
         "<"
       )
-      // Turn up displacement
-      .to(
-        screenMesh.current.material.uniforms.uDisplacementStrength,
-        {
-          value: 1,
-          duration: 1,
-        },
-        "<"
-      )
-      // Turn off spotlight
-      .to(
-        spotLight3.current,
-        {
-          intensity: 0,
-          duration: 1,
-        },
-        "<"
-      )
       // Pan over first splat
       .to(cameraData.current.position, {
         endArray: cameraPositions.second,
@@ -477,7 +455,7 @@ export const Experience = () => {
     //   0.05
     // );
 
-    cameraRotateBy.set(pointer.x * 0.07, pointer.y * 0.07);
+    cameraRotateBy.set(pointer.x * 0.007, pointer.y * 0.007);
     cameraRotate.lerp(cameraRotateBy, delta * 2);
     cameraControls.current.rotate(
       cameraRotateBy.x - cameraRotate.x,
@@ -566,11 +544,6 @@ export const Experience = () => {
           {...transitionControls}
           toneMapped={false}
         >
-          {/* RIPPLE TEXTURE */}
-          {/* <RenderTexture ref={rippleTexture} attach={"uDisplacement"}>
-            <OrthographicCamera makeDefault position={[0, 0, 10]} />
-            <RippleTexture pointer={pointer} />
-          </RenderTexture> */}
         </transitionMaterial>
       </mesh>
 
@@ -659,7 +632,7 @@ export const Experience = () => {
         <Environment preset="forest" background blur={blur}></Environment>
 
         {/* TEXT */}
-        <group position-y={20} ref={text}>
+        <group position-y={16} ref={text}>
           <Text
             fontSize={5}
             color={"#cccccc"}
@@ -672,11 +645,11 @@ export const Experience = () => {
           </Text>
           <Text
             fontSize={2}
-            color="#c2410c"
+            color="#cccccc"
             anchorY="top"
             textAlign="center"
             font="fonts/Redaction_70-Bold.ttf"
-            position={[8, 0.5, 0]}
+            position={[7, 0.9, 10]}
           >
             studio
             <meshStandardMaterial />
